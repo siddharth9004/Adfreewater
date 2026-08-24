@@ -1,664 +1,1230 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AdFreeWater | Advertising That Gives Back</title>
+<title>AdFreeWater | Advertising That Gives Back</title>
 
-    <meta name="description"
-        content="AdFreeWater connects brands with people through free drinking water and meaningful advertising.">
+<meta name="description" content="AdFreeWater turns free drinking water into a powerful advertising platform.">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d1b2e;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    height: 78px;
+    border-bottom: 1px solid #e6edf5;
+    background: white;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-inner {
+    width: min(1160px, 90%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0b75df;
+}
+
+.logo span {
+    color: #0d1b2e;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #17324d;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0673df;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #0875df;
+    color: white;
+    box-shadow: 0 12px 25px rgba(8,117,223,0.20);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #0567c7;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #9ec8ef;
+    color: #0d3154;
+}
+
+.btn-outline:hover {
+    border-color: #0875df;
+    color: #0875df;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 610px;
+    background:
+        radial-gradient(circle at 85% 25%, rgba(135,190,245,0.25), transparent 30%),
+        linear-gradient(120deg, #ffffff 40%, #f2f8ff 100%);
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.label {
+    display: inline-block;
+    background: #e5f3ff;
+    color: #006edc;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(54px, 6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #0673df;
+}
+
+.hero p {
+    max-width: 610px;
+    font-size: 18px;
+    color: #54708f;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-checks {
+    display: flex;
+    gap: 25px;
+    margin-top: 23px;
+    color: #3e5973;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero-checks span::before {
+    content: "✓";
+    color: #0673df;
+    margin-right: 7px;
+}
+
+.hero-visual {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-weight: 700;
+    box-shadow: 0 15px 40px rgba(30,90,140,0.12);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.section-label {
+    color: #0071df;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: clamp(42px, 5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: #587391;
+    font-size: 17px;
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how {
+    background: white;
+}
+
+.steps {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+}
+
+.step-number {
+    color: #53aef4;
+    font-weight: 800;
+    margin-bottom: 48px;
+}
+
+.step h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.step p {
+    color: #a0c3e5;
+    font-size: 14px;
+}
+
+/* =========================
+   BRAND SECTION
+========================= */
+
+.brand-section {
+    background: white;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+    align-items: center;
+    gap: 80px;
+}
+
+.split-image {
+    min-height: 450px;
+    border-radius: 25px;
+    background:
+        linear-gradient(135deg, #f7fbff, #eef7ff);
+}
+
+.split-content .section-label {
+    margin-bottom: 12px;
+}
+
+.split-content h2 {
+    font-size: clamp(42px, 5vw, 55px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.split-content p {
+    color: #0d3154;
+    margin-bottom: 22px;
+}
+
+.bullet-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.bullet-list li {
+    margin: 15px 0;
+    padding-left: 23px;
+    position: relative;
+    color: #17324d;
+}
+
+.bullet-list li::before {
+    content: "•";
+    color: #0875df;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+/* =========================
+   EVENT SECTION
+========================= */
+
+.event-section {
+    background: #f3f8fe;
+}
+
+.event-section .split-image {
+    background: transparent;
+    order: 2;
+}
+
+.event-section .split-content {
+    order: 1;
+}
+
+.check-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.check-list li {
+    margin: 15px 0;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: #0875df;
+    font-weight: 800;
+    margin-right: 12px;
+}
+
+/* =========================
+   IMPACT
+========================= */
+
+.impact {
+    background: white;
+}
+
+.cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #d8e7f5;
+    border-radius: 25px;
+    padding: 28px;
+    min-height: 215px;
+    transition: 0.3s;
+    box-shadow: 0 10px 35px rgba(20,80,130,0.04);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(20,80,130,0.10);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background: #e5f3ff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #587391;
+}
+
+/* =========================
+   CAMPAIGN
+========================= */
+
+.campaign {
+    background: white;
+}
+
+.campaign-boxes {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.campaign-box {
+    height: 460px;
+    border: 1px solid #d8e1ea;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ffffff, #f8fbfe);
+}
+
+/* =========================
+   BLUE CTA
+========================= */
+
+.cta {
+    background: linear-gradient(110deg, #0875df, #07529c);
+    color: white;
+    padding: 70px 0;
+}
+
+.cta-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.cta .section-label {
+    color: #b7e0ff;
+}
+
+.cta h2 {
+    font-size: clamp(40px, 5vw, 54px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 650px;
+    color: #dceeff;
+}
+
+.btn-white {
+    background: white;
+    color: #0b3e72;
+    white-space: nowrap;
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-card {
+    border: 1px solid #d8e7f5;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #dce8f3;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-item span {
+    color: #587391;
+}
+
+.contact-list {
+    padding-left: 25px;
+}
+
+.contact-list li {
+    padding: 7px 0;
+    color: #17324d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #07182b;
+    color: white;
+    padding: 45px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.footer-text {
+    color: #9bb2c8;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-grid,
+    .split,
+    .contact-grid,
+    .campaign-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-visual {
+        min-height: 180px;
+    }
+
+    .steps,
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .split-image {
+        min-height: 250px;
+    }
+
+    .event-section .split-image,
+    .event-section .split-content {
+        order: initial;
+    }
+
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media(max-width: 550px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-checks {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .steps,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .split-content h2 {
+        font-size: 40px;
+    }
+
+    .campaign-box {
+        height: 300px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- ================= NAVIGATION ================= -->
+<!-- NAVIGATION -->
 
-    <header class="navbar">
+<nav>
+    <div class="nav-inner">
 
-        <div class="nav-container">
+        <a href="#" class="logo">
+            AdFree<span>Water</span>
+        </a>
 
-            <a href="#home" class="logo">
-                AdFreeWater
-            </a>
-
-            <nav class="nav-links">
-
-                <a href="#how-it-works">How It Works</a>
-
-                <a href="#brands">For Brands</a>
-
-                <a href="#events">For Events</a>
-
-                <a href="#impact">Our Impact</a>
-
-                <a href="#contact">Contact</a>
-
-            </nav>
-
-            <a href="#contact" class="nav-button">
-                Partner With Us
-            </a>
-
+        <div class="nav-links">
+            <a href="#how">How It Works</a>
+            <a href="#brands">For Brands</a>
+            <a href="#events">For Events</a>
+            <a href="#impact">Our Impact</a>
+            <a href="#contact">Contact</a>
         </div>
 
-    </header>
+        <a href="#contact" class="btn btn-primary">
+            Partner With Us
+        </a>
+
+    </div>
+</nav>
 
 
-    <main>
+<!-- HERO -->
 
+<section class="hero">
 
-        <!-- ================= HERO ================= -->
+    <div class="container hero-grid">
 
-        <section class="hero" id="home">
+        <div>
 
-            <div class="hero-container">
-
-                <div class="hero-content">
-
-                    <div class="eyebrow">
-                        ADVERTISING THAT GIVES BACK
-                    </div>
-
-                    <h1>
-                        Your Brand.
-                        <span>In Their Hands.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        AdFreeWater turns an everyday essential into a
-                        powerful advertising platform. We provide free
-                        drinking water while giving brands meaningful
-                        visibility, targeted reach and a chance to
-                        create positive impact.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#contact" class="button primary">
-                            Advertise With Us →
-                        </a>
-
-                        <a href="#events" class="button secondary">
-                            Partner for Your Event
-                        </a>
-
-                    </div>
-
-                    <div class="hero-features">
-
-                        <span>✓ Free hydration</span>
-
-                        <span>✓ Brand visibility</span>
-
-                        <span>✓ Targeted distribution</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="hero-badge">
-                        Clean water • Smart advertising • Positive impact
-                    </div>
-
-                </div>
-
+            <div class="label">
+                ADVERTISING THAT GIVES BACK
             </div>
 
-        </section>
-
-
-        <!-- ================= HOW IT WORKS ================= -->
-
-        <section class="section how-section" id="how-it-works">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    SIMPLE MODEL. REAL REACH.
-                </div>
-
-                <h2>
-                    How AdFreeWater works
-                </h2>
-
-                <p>
-                    We connect brands with people through something
-                    everyone needs: clean drinking water.
-                </p>
-
-            </div>
-
-
-            <div class="steps">
-
-                <div class="step">
-
-                    <div class="step-number">
-                        01
-                    </div>
-
-                    <p>
-                        Your approved brand artwork is placed on
-                        bottles distributed for free.
-                    </p>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        02
-                    </div>
-
-                    <p>
-                        People receive useful hydration and interact
-                        with your brand in the real world.
-                    </p>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        03
-                    </div>
-
-                    <p>
-                        We plan distribution around events, locations
-                        and audiences relevant to your campaign.
-                    </p>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        04
-                    </div>
-
-                    <p>
-                        You get visibility, content and a memorable
-                        consumer experience—not just an impression.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= FOR BRANDS ================= -->
-
-        <section class="split-section" id="brands">
-
-            <div class="split-container">
-
-                <div class="split-space">
-                    <!-- Future bottle/product image -->
-                </div>
-
-
-                <div class="split-content">
-
-                    <div class="eyebrow">
-                        FOR BRANDS
-                    </div>
-
-                    <h2>
-                        Put your message where people can actually
-                        hold it.
-                    </h2>
-
-                    <p>
-                        Instead of another ad that disappears into a
-                        feed, your brand becomes part of a useful
-                        consumer moment.
-                    </p>
-
-
-                    <ul class="check-list">
-
-                        <li>
-                            <strong>High visibility:</strong>
-                            branded bottles create physical,
-                            repeated exposure.
-                        </li>
-
-                        <li>
-                            <strong>Targeted marketing:</strong>
-                            choose locations and events aligned
-                            with your audience.
-                        </li>
-
-                        <li>
-                            <strong>Positive association:</strong>
-                            your brand helps provide something
-                            people need.
-                        </li>
-
-                        <li>
-                            <strong>Campaign content:</strong>
-                            distribution photos and videos can
-                            support your marketing.
-                        </li>
-
-                    </ul>
-
-
-                    <a href="#contact" class="button primary">
-                        Plan a Brand Campaign →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= EVENTS ================= -->
-
-        <section class="split-section light-section" id="events">
-
-            <div class="split-container">
-
-                <div class="split-content">
-
-                    <div class="eyebrow">
-                        FOR EVENT ORGANIZERS
-                    </div>
-
-                    <h2>
-                        Serve your attendees more.
-                        At no extra cost.
-                    </h2>
-
-                    <p>
-                        We provide free drinking water for event
-                        attendees and manage the campaign logistics.
-                        Your venue provides a small space for our
-                        distribution point.
-                    </p>
-
-
-                    <ul class="event-list">
-
-                        <li>
-                            <strong>Free water for attendees</strong>
-                            — a practical benefit people appreciate.
-                        </li>
-
-                        <li>
-                            <strong>We handle the campaign</strong>
-                            — supply, logistics, staff and distribution
-                            planning.
-                        </li>
-
-                        <li>
-                            <strong>Positive event experience</strong>
-                            — hydration adds comfort and goodwill.
-                        </li>
-
-                    </ul>
-
-
-                    <a href="#contact" class="button primary">
-                        Partner for an Event →
-                    </a>
-
-                </div>
-
-
-                <div class="split-space">
-                    <!-- Future event image -->
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= IMPACT ================= -->
-
-        <section class="section impact-section" id="impact">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    WHY IT MATTERS
-                </div>
-
-                <h2>
-                    More than advertising.
-                </h2>
-
-                <p>
-                    Every campaign is designed to connect commercial
-                    visibility with a useful consumer experience and
-                    social impact.
-                </p>
-
-            </div>
-
-
-            <div class="cards">
-
-                <div class="card">
-
-                    <div class="icon">
-                        💧
-                    </div>
-
-                    <h3>
-                        Clean water
-                    </h3>
-
-                    <p>
-                        People get free drinking water when and
-                        where they need it.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="icon">
-                        📣
-                    </div>
-
-                    <h3>
-                        Smart advertising
-                    </h3>
-
-                    <p>
-                        Brands gain a tangible, memorable touchpoint
-                        with their target audience.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="icon">
-                        💙
-                    </div>
-
-                    <h3>
-                        Give-back model
-                    </h3>
-
-                    <p>
-                        Our model is built around creating positive
-                        community impact alongside brand visibility.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CAMPAIGN ================= -->
-
-        <section class="section campaign-section">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    SEE THE IDEA
-                </div>
-
-                <h2>
-                    From bottle to real-world
-                    <br>
-                    campaign.
-                </h2>
-
-                <p>
-                    Brand it. Distribute it. Let people experience it.
-                </p>
-
-            </div>
-
-
-            <div class="campaign-grid">
-
-                <div class="campaign-image">
-                    <!-- Add campaign image here later -->
-                </div>
-
-                <div class="campaign-image">
-                    <!-- Add campaign image here later -->
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= BLUE CTA ================= -->
-
-        <section class="blue-cta">
-
-            <div class="cta-container">
-
-                <div>
-
-                    <div class="eyebrow white">
-                        READY TO MAKE AN IMPACT?
-                    </div>
-
-                    <h2>
-                        Let's put your brand in their hands.
-                    </h2>
-
-                    <p>
-                        Tell us your audience, campaign size and
-                        location. We'll help build a branded
-                        hydration campaign around your objective.
-                    </p>
-
-                </div>
-
-
-                <a href="#contact" class="button white-button">
-                    Start a Conversation →
+            <h1>
+                Your Brand.<br>
+                <span>In Their Hands.</span>
+            </h1>
+
+            <p>
+                AdFreeWater turns an everyday essential into a powerful
+                advertising platform. We provide free drinking water while
+                giving brands meaningful visibility, targeted reach and a
+                chance to create positive impact.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Advertise With Us →
+                </a>
+
+                <a href="#events" class="btn btn-outline">
+                    Partner for Your Event
                 </a>
 
             </div>
 
-        </section>
-
-
-        <!-- ================= CONTACT ================= -->
-
-        <section class="section contact-section" id="contact">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    LET'S TALK
-                </div>
-
-                <h2>
-                    Build your next campaign with
-                    <br>
-                    AdFreeWater.
-                </h2>
-
-                <p>
-                    Brands, event organizers and partners can reach
-                    us directly.
-                </p>
-
+            <div class="hero-checks">
+                <span>Free hydration</span>
+                <span>Brand visibility</span>
+                <span>Targeted distribution</span>
             </div>
 
+        </div>
 
-            <div class="contact-grid">
+        <div class="hero-visual">
 
-
-                <!-- CONTACT INFORMATION -->
-
-                <div class="contact-card">
-
-                    <h3>
-                        Contact AdFreeWater
-                    </h3>
-
-
-                    <div class="contact-item">
-
-                        <strong>
-                            Phone
-                        </strong>
-
-                        <a href="tel:+919004598273">
-                            +91 90045 98273
-                        </a>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <strong>
-                            Email
-                        </strong>
-
-                        <a href="mailto:adfreewater100@gmail.com">
-                            adfreewater100@gmail.com
-                        </a>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <strong>
-                            Website
-                        </strong>
-
-                        <span>
-                            www.adfreewater.com
-                        </span>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <strong>
-                            Serving
-                        </strong>
-
-                        <span>
-                            Mumbai and campaign locations as planned.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- WHAT TO SEND -->
-
-                <div class="contact-card">
-
-                    <h3>
-                        What should you send us?
-                    </h3>
-
-                    <p>
-                        For a quick proposal, share:
-                    </p>
-
-
-                    <ol>
-
-                        <li>
-                            Your brand/company name
-                        </li>
-
-                        <li>
-                            Approximate number of bottles
-                        </li>
-
-                        <li>
-                            Event/location and date
-                        </li>
-
-                        <li>
-                            Your target audience or campaign objective
-                        </li>
-
-                    </ol>
-
-
-                    <div class="contact-buttons">
-
-                        <a
-                            href="mailto:adfreewater100@gmail.com"
-                            class="button primary">
-                            Email Us →
-                        </a>
-
-                        <a
-                            href="https://wa.me/919004598273"
-                            target="_blank"
-                            class="button secondary">
-                            WhatsApp →
-                        </a>
-
-                    </div>
-
-                </div>
-
+            <div class="hero-card">
+                Clean water • Smart advertising • Positive impact
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </div>
+
+</section>
 
 
-    <!-- ================= FOOTER ================= -->
+<!-- HOW IT WORKS -->
 
-    <footer>
+<section class="how" id="how">
 
-        <div class="footer-container">
+    <div class="container">
 
-            <div class="footer-logo">
-                AdFreeWater
+        <div class="section-heading">
+
+            <div class="section-label">
+                SIMPLE MODEL. REAL REACH.
             </div>
+
+            <h2>
+                How AdFreeWater works
+            </h2>
 
             <p>
-                Advertising that gives back.
-            </p>
-
-            <p class="copyright">
-                © 2026 AdFreeWater. All rights reserved.
+                We connect brands with people through something everyone
+                needs: clean drinking water.
             </p>
 
         </div>
 
-    </footer>
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">01</div>
+
+                <h3>Brand artwork</h3>
+
+                <p>
+                    Your approved brand artwork is placed on bottles
+                    distributed for free.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">02</div>
+
+                <h3>People receive water</h3>
+
+                <p>
+                    People receive useful hydration and interact with
+                    your brand in the real world.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">03</div>
+
+                <h3>Targeted distribution</h3>
+
+                <p>
+                    We plan distribution around events, locations and
+                    audiences relevant to your campaign.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">04</div>
+
+                <h3>Real-world visibility</h3>
+
+                <p>
+                    You get visibility, content and a memorable consumer
+                    experience—not just an impression.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <script src="script.js"></script>
+<!-- FOR BRANDS -->
+
+<section class="brand-section" id="brands">
+
+    <div class="container split">
+
+        <div class="split-image">
+        </div>
+
+        <div class="split-content">
+
+            <div class="section-label">
+                FOR BRANDS
+            </div>
+
+            <h2>
+                Put your message where people can actually hold it.
+            </h2>
+
+            <p>
+                Instead of another ad that disappears into a feed,
+                your brand becomes part of a useful consumer moment.
+            </p>
+
+            <ul class="bullet-list">
+
+                <li>
+                    <strong>High visibility:</strong>
+                    branded bottles create physical, repeated exposure.
+                </li>
+
+                <li>
+                    <strong>Targeted marketing:</strong>
+                    choose locations and events aligned with your audience.
+                </li>
+
+                <li>
+                    <strong>Positive association:</strong>
+                    your brand helps provide something people need.
+                </li>
+
+                <li>
+                    <strong>Campaign content:</strong>
+                    distribution photos and videos can support your marketing.
+                </li>
+
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+                Plan a Brand Campaign →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<section class="event-section" id="events">
+
+    <div class="container split">
+
+        <div class="split-content">
+
+            <div class="section-label">
+                FOR EVENT ORGANIZERS
+            </div>
+
+            <h2>
+                Serve your attendees more. At no extra cost.
+            </h2>
+
+            <p>
+                We provide free drinking water for event attendees and
+                manage the campaign logistics. Your venue provides a
+                small space for our distribution point.
+            </p>
+
+            <ul class="check-list">
+
+                <li>
+                    <strong>Free water for attendees</strong>
+                    — a practical benefit people appreciate.
+                </li>
+
+                <li>
+                    <strong>We handle the campaign</strong>
+                    — supply, logistics, staff and distribution planning.
+                </li>
+
+                <li>
+                    <strong>Positive event experience</strong>
+                    — hydration adds comfort and goodwill.
+                </li>
+
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+                Partner for an Event →
+            </a>
+
+        </div>
+
+        <div class="split-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- IMPACT -->
+
+<section class="impact" id="impact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                WHY IT MATTERS
+            </div>
+
+            <h2>
+                More than advertising.
+            </h2>
+
+            <p>
+                Every campaign is designed to connect commercial visibility
+                with a useful consumer experience and social impact.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">💧</div>
+
+                <h3>
+                    Clean water
+                </h3>
+
+                <p>
+                    People get free drinking water when and where they need it.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📣</div>
+
+                <h3>
+                    Smart advertising
+                </h3>
+
+                <p>
+                    Brands gain a tangible, memorable touchpoint with
+                    their target audience.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">♥</div>
+
+                <h3>
+                    Give-back model
+                </h3>
+
+                <p>
+                    Our model is built around creating positive community
+                    impact alongside brand visibility.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CAMPAIGN -->
+
+<section class="campaign">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                SEE THE IDEA
+            </div>
+
+            <h2>
+                From bottle to real-world campaign.
+            </h2>
+
+            <p>
+                Brand it. Distribute it. Let people experience it.
+            </p>
+
+        </div>
+
+        <div class="campaign-boxes">
+
+            <div class="campaign-box"></div>
+
+            <div class="campaign-box"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container cta-inner">
+
+        <div>
+
+            <div class="section-label">
+                READY TO MAKE AN IMPACT?
+            </div>
+
+            <h2>
+                Let's put your brand in their hands.
+            </h2>
+
+            <p>
+                Tell us your audience, campaign size and location.
+                We'll help build a branded hydration campaign around
+                your objective.
+            </p>
+
+        </div>
+
+        <a href="#contact" class="btn btn-white">
+            Start a Conversation →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                LET'S TALK
+            </div>
+
+            <h2>
+                Build your next campaign with AdFreeWater.
+            </h2>
+
+            <p>
+                Brands, event organizers and partners can reach us directly.
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>
+                    Contact AdFreeWater
+                </h3>
+
+                <div class="contact-item">
+
+                    <strong>Phone</strong>
+
+                    <span>
+                        +91 90045 98273
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Email</strong>
+
+                    <span>
+                        adfreewater100@gmail.com
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Website</strong>
+
+                    <span>
+                        www.adfreewater.com
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Serving</strong>
+
+                    <span>
+                        Mumbai and campaign locations as planned.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    What should you send us?
+                </h3>
+
+                <p style="color:#587391; margin-bottom:15px;">
+                    For a quick proposal, share:
+                </p>
+
+                <ol class="contact-list">
+
+                    <li>
+                        Your brand/company name
+                    </li>
+
+                    <li>
+                        Approximate number of bottles
+                    </li>
+
+                    <li>
+                        Event/location and date
+                    </li>
+
+                    <li>
+                        Your target audience or campaign objective
+                    </li>
+
+                </ol>
+
+                <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+
+                    <a
+                        href="mailto:adfreewater100@gmail.com"
+                        class="btn btn-primary">
+                        Email Us →
+                    </a>
+
+                    <a
+                        href="https://wa.me/919004598273"
+                        target="_blank"
+                        class="btn btn-outline">
+                        WhatsApp →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-logo">
+            AdFreeWater
+        </div>
+
+        <div class="footer-text">
+            © 2026 AdFreeWater. Advertising that gives back.
+        </div>
+
+    </div>
+
+</footer>
+
 
 </body>
-
 </html>
