@@ -589,94 +589,6 @@ footer {
 }
 
 /* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 850px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero-grid,
-    .split,
-    .contact-grid,
-    .campaign-boxes {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 70px 0;
-    }
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .hero-visual {
-        min-height: 180px;
-    }
-
-    .steps,
-    .cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .split-image {
-        min-height: 250px;
-    }
-
-    .event-section .split-image,
-    .event-section .split-content {
-        order: initial;
-    }
-
-    .cta-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-}
-
-@media(max-width: 550px) {
-
-    section {
-        padding: 70px 0;
-    }
-
-    .hero h1 {
-        font-size: 46px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero-checks {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .steps,
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading h2,
-    .split-content h2 {
-        font-size: 40px;
-    }
-
-    .campaign-box {
-        height: 300px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-/* =========================
    MOBILE RESPONSIVE DESIGN
    ========================= */
 
@@ -714,10 +626,10 @@ footer {
         padding: 60px 0 50px;
     }
 
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+    .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
 
     .hero h1 {
         font-size: 48px;
