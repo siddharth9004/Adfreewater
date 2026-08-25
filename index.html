@@ -589,6 +589,258 @@ footer {
     font-size: 13px;
 }
 
+    /* =========================
+   FINAL MOBILE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Prevent anything from going outside the phone */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Main container */
+    .container,
+    .nav-inner {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+        height: 64px;
+    }
+
+    .nav-inner {
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    /* Hide desktop navigation links */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* Make the navigation CTA smaller */
+    nav .btn {
+        padding: 10px 16px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        padding: 55px 0 60px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 46px !important;
+        line-height: 0.98;
+        max-width: 100%;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 100%;
+    }
+
+    .hero-checks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+    }
+
+    .hero-checks > * {
+        font-size: 12px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 280px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2,
+    .split-content h2 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .section-heading p,
+    .split-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* =========================
+       TWO COLUMN SECTIONS
+    ========================= */
+
+    .split {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .steps,
+    .cards {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* =========================
+       CAMPAIGN IMAGES
+    ========================= */
+
+    .campaign-boxes {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .campaign-box {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .campaign-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* =========================
+       SPLIT IMAGES
+    ========================= */
+
+    .split-image {
+        width: 100%;
+        min-height: 260px;
+        overflow: hidden;
+    }
+
+    .split-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .container,
+    .nav-inner {
+        width: 90%;
+    }
+
+    nav {
+        height: 62px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    nav .btn {
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 45px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 42px !important;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-heading h2,
+    .split-content h2 {
+        font-size: 34px;
+    }
+
+    .campaign-box {
+        height: 280px;
+    }
+}
 </style>
 
 </head>
