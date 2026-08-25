@@ -716,6 +716,176 @@ footer {
         gap: 25px;
     }
 }
+    /* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Prevent horizontal scrolling */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Main containers */
+    .container,
+    .nav-inner {
+        width: 92%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Navigation */
+    nav {
+        height: 64px;
+    }
+
+    .nav-inner {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Hide desktop navigation links on mobile */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hero section */
+    .hero {
+        padding: 55px 0;
+        overflow: hidden;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        line-height: 1.02;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 220px;
+    }
+
+    /* Make all two-column sections one column */
+    .split,
+    .contact-grid,
+    .campaign-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Steps and cards */
+    .steps,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Campaign images */
+    .campaign-box {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .campaign-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Section headings */
+    .section-heading h2,
+    .split-content h2,
+    .cta h2 {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    /* Images in split sections */
+    .split-image {
+        width: 100%;
+        min-height: 250px;
+    }
+
+    /* CTA */
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    /* Footer */
+    .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE PHONES
+========================= */
+
+@media (max-width: 550px) {
+
+    section {
+        padding: 55px 0;
+    }
+
+    .container,
+    .nav-inner {
+        width: 90%;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section-heading h2,
+    .split-content h2,
+    .cta h2 {
+        font-size: 32px;
+    }
+
+    .campaign-box {
+        height: 280px;
+    }
+
+    .hero-visual {
+        min-height: 200px;
+    }
+
+}
 </style>
 
 </head>
